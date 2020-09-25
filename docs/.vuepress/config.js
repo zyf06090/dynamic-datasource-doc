@@ -83,8 +83,8 @@ function genNav(isZh) {
       text: isZh ? "示例项目" : "samples",
       link: "https://github.com/dynamic-datasource/dynamic-datasource-samples",
     },
-    isZh ? { text: "捐赠", link: "/guide/donate/" } : {},
-    isZh ? { text: "委托开发", link: "/guide/develop/" } : {},
+    { text: isZh ? "捐赠" : "donate", link: "/guide/donate/" },
+    { text: "委托开发", link: "/guide/develop/" },
   ];
 }
 
