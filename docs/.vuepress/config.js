@@ -1,5 +1,5 @@
 module.exports = {
-  base:"/dynamic-datasource-doc/",
+  base: "/dynamic-datasource-doc/",
   port: "3000",
   title: "Dynamic Datasource",
   description: "Dynamic Datasource",
@@ -62,6 +62,10 @@ function genNav(isZh) {
           link: "https://github.com/baomidou/MybatisX",
         },
         {
+          text: "Shuan 权限组件",
+          link: "https://gitee.com/baomidou/shaun",
+        },
+        {
           text: "Kisso 单点登录",
           link: "https://github.com/baomidou/kisso",
         },
@@ -77,9 +81,10 @@ function genNav(isZh) {
     },
     {
       text: isZh ? "示例项目" : "samples",
-      link: "https://gitee.com/baomidou/dynamic-datasource-samples",
+      link: "https://github.com/dynamic-datasource/dynamic-datasource-samples",
     },
-    { text: isZh ? "捐赠" : "donate", link: "/guide/donate/" },
+    isZh ? { text: "捐赠", link: "/guide/donate/" } : {},
+    isZh ? { text: "委托开发", link: "/guide/develop/" } : {},
   ];
 }
 
