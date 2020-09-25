@@ -1,5 +1,5 @@
 module.exports = {
-  base:"/",
+  base:"/dynamic-datasource-doc",
   port: "3000",
   title: "Dynamic Datasource",
   description: "Dynamic Datasource",
