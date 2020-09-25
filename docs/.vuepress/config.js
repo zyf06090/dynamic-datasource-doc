@@ -1,4 +1,5 @@
 module.exports = {
+  base:"/",
   port: "3000",
   title: "Dynamic Datasource",
   description: "Dynamic Datasource",
@@ -19,14 +20,14 @@ module.exports = {
   },
   themeConfig: {
     repo: "baomidou/dynamic-datasource-spring-boot-starter",
-    docsRepo: "baomidou/dynamic-datasource-doc",
+    docsRepo: "dynamic-datasource/dynamic-datasource-doc",
     smoothScroll: true,
     editLinks: true,
     locales: {
       "/en/": {
         selectText: "Languages",
         label: "English",
-        editLinkText: "help edit doc",
+        editLinkText: "Improve Doc",
         lastUpdated: "lastUpdated",
         nav: genNav(false),
         sidebar: {
@@ -36,7 +37,7 @@ module.exports = {
       "/": {
         selectText: "Language",
         label: "简体中文",
-        editLinkText: "协助修正补充文档",
+        editLinkText: "完善文档",
         lastUpdated: "上次更新",
         nav: genNav(true),
         sidebar: {
