@@ -22,7 +22,7 @@ footer: Apache License 2.0 | © 2018-2020 baomidou
 ```xml
 <dependency>
     <groupId>com.baomidou</groupId>
-    <artifactId>dynamic-spring-boot-starter</artifactId>
+    <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
     <version>3.2.1</version>
 </dependency>
 ```
