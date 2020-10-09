@@ -43,7 +43,7 @@ public class MyQuartzAutoConfiguration {
     @Autowired
     private DataSourceProperties dataSourceProperties;
 
-    @Order(Ordered.HIGHEST_PRECEDENCE)
+    @Order(1)
     @Bean
     public SchedulerFactoryBeanCustomizer schedulerFactoryBeanCustomizer() {
         DataSource dataSource = dataSourceProperties.initializeDataSourceBuilder().build();
