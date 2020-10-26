@@ -1,5 +1,7 @@
 # 自定义数据源来源
 
+## 基础介绍
+
 数据源来源的默认实现是`YmlDynamicDataSourceProvider`，其从yaml或properties中读取信息并解析出所有数据源信息。
 
 ```java
@@ -13,6 +15,8 @@ public interface DynamicDataSourceProvider {
     Map<String, DataSource> loadDataSources();
 }
 ```
+
+## 自定义示例
 
 可以参考  `AbstractJdbcDataSourceProvider`  （仅供参考）来实现从JDBC数据库中获取数据库连接信息。
 

@@ -134,6 +134,7 @@ function genGuideSidebar(isZh) {
       title: "FAQ",
       collapsable: false,
       children: [
+        "faq/Questions",
         "faq/Failed-Switch-Database",
         "faq/Transation-Questions",
         "faq/Debug-SourceCode",

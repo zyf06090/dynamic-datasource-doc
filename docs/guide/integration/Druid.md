@@ -27,7 +27,7 @@
 </dependency>
 ```
 
-2. 排除原生Druid的快速配置类。
+2. 排除原生Druid的快速配置类。:sweat_drops:
 
 ```java
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
@@ -49,9 +49,9 @@ spring:
 
 ## 参数配置
 
-- 如果参数都未配置，则保持原组件默认值。
-- 如果配置了全局参数，则每一个数据源都会继承对应参数。
-- 每一个数据源可以单独设置参数覆盖全局参数。
+1. :heart: 如果参数都未配置，则保持原组件默认值。
+2. :yellow_heart: 如果配置了全局参数，则每一个数据源都会继承对应参数。 
+3. :blue_heart: 每一个数据源可以单独设置参数覆盖全局参数。
 
 ```yaml
 spring:
