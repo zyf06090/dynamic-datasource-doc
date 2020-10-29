@@ -92,7 +92,7 @@ public class MyConfiguration {
 
 ## 5.Druid版本过低。
 
-请升级druid1.2.22及以上版本，这个版本修复了在高并发下偶发的切换失效问题。
+请升级druid1.1.22及以上版本，这个版本修复了在高并发下偶发的切换失效问题。
 
 ## 6.@Async或者java8的ParallelStream并行流之类方法。
 
