@@ -1,21 +1,22 @@
-# 集成Druid
+# Integrating Druid
 
-## 基础介绍
+## Introduction
 
 - Druid Github <https://github.com/alibaba/druid>
-- Druid 文档 <https://github.com/alibaba/druid/wiki>
+- Druid Document <https://github.com/alibaba/druid/wiki>
 
-本组件能```简单高效``` :cherry_blossom:完成对Druid的集成并完成其参数的多元化配置。
+This component is ```simple and efficient ``` :cherry_blossom:  in integrating Druid and diversifying its parameters
 
-::: tip 提示
-1.各个库可以使用不同的数据库连接池，如  **master使用Druid监控，从库使用HikariCP**。
+::: tip
 
-2.如果项目同时存在Druid和HikariCP并且未配置连接池type类型，默认 **Druid优先于HikariCP** 。
+1. Each db can connect to a pool using a different database driver, such as master using Druid and slave use HikariCP.
+
+2. If the project has both Druid and HikariCP and the connection pool type is not configured, the default is that** Druid takes precedence over HikariCP**.
 :::
 
-## 如何集成
+## How to use
 
-1. 项目引入 `druid-spring-boot-starter` 依赖。
+1. use `druid-spring-boot-starter` dependency.
 <a href="http://mvnrepository.com/artifact/com.alibaba/druid" target="_blank">
 <img src="https://img.shields.io/maven-central/v/com.alibaba/druid.svg" ></a>
 
@@ -27,7 +28,7 @@
 </dependency>
 ```
 
-2. 排除原生Druid的快速配置类。
+2. Exclude the native Druid quick configuration class. :sweat_drops:
 
 ```java
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
@@ -39,7 +40,7 @@ public class Application {
 }
 ```
 
-3. 某些springBoot的版本上面可能无法排除可用以下方式排除。
+3. Some springBoot versions may not exclude, you can try this.
 
 ```yaml
 spring:
@@ -47,11 +48,11 @@ spring:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
 ```
 
-## 参数配置
+## Configurate parameters
 
-- 如果参数都未配置，则保持原组件默认值。
-- 如果配置了全局参数，则每一个数据源都会继承对应参数。
-- 每一个数据源可以单独设置参数覆盖全局参数。
+1. :heart: If none of the parameters are configured, the default value of the original component is maintained.
+2. :yellow_heart: If global parameters are configured, each data source inherits the corresponding parameters.
+3. :blue_heart: Each datasource can set parameters separately to override global parameters.
 
 ```yaml
 spring:
@@ -62,7 +63,7 @@ spring:
         loginUsername: admin
         loginPassword: 123456
     dynamic:
-      druid: #以下是支持的全局默认值
+      druid: #The following are the supported global parameters
         initial-size:
         max-active:
         min-idle:
@@ -97,7 +98,7 @@ spring:
         share-prepared-statements:
         connection-errorretry-attempts:
         break-after-acquire-failure:
-        filters: stat,wall # 注意这个值和druid原生不一致，默认启动了stat,wall
+        filters: stat,wall
         wall:
             noneBaseStatementAllow:
             callAllow:
@@ -174,23 +175,25 @@ spring:
           password: 123456
           driver-class-name: com.mysql.jdbc.Driver
           url: jdbc:mysql://xx.xx.xx.xx:3306/dynamic?characterEncoding=utf8&useSSL=false
-          druid: # 以下是独立参数，每个库可以重新设置
+          druid: # The following are independent parameters that can be reset for each db
             initial-size:
-            validation-query: select 1 FROM DUAL #比如oracle就需要重新设置这个
-            public-key: #（非全局参数）设置即表示启用加密,底层会自动帮你配置相关的连接参数和filter，推荐使用本项目自带的加密方法。
+            validation-query: select 1 FROM DUAL #such as oracle need this
+            public-key: #(non global parameter) setting means that encryption is enabled. The underlying layer will automatically configure the relevant connection parameters and filter for you. It is recommended to use the encryption method provided by this project.
+
+
 #           ......
 
-# 生成 publickey 和密码，推荐使用本项目自带的加密方法。
+# generate publickey 和password,It is recommended to use the encryption method of the project.
 # java -cp druid-1.1.10.jar com.alibaba.druid.filter.config.ConfigTools youpassword
 ```
 
-如上即可配置访问用户和密码，访问 <http://localhost:8080/druid/index.html> 查看druid监控。
+visit <http://localhost:8080/druid/index.html> to view druid monitor page.
 
-## 核心源码
+## Core source code
 
-`Druid数据源创建器` :two_hearts: <https://github.com/baomidou/dynamic-datasource-spring-boot-starter/blob/master/src/main/java/com/baomidou/dynamic/datasource/creator/DruidDataSourceCreator.java>
+`DruidDataSourceCreator` :two_hearts: <https://github.com/baomidou/dynamic-datasource-spring-boot-starter/blob/master/src/main/java/com/baomidou/dynamic/datasource/creator/DruidDataSourceCreator.java>
 
-`Druid参数源码` :two_hearts: <https://github.com/baomidou/dynamic-datasource-spring-boot-starter/blob/master/src/main/java/com/baomidou/dynamic/datasource/spring/boot/autoconfigure/druid/DruidConfig.java>
+`DruidConfig` :two_hearts: <https://github.com/baomidou/dynamic-datasource-spring-boot-starter/blob/master/src/main/java/com/baomidou/dynamic/datasource/spring/boot/autoconfigure/druid/DruidConfig.java>
 
-如有参数缺失可参考源码提交PR。
+If there are missing parameters, please refer to the source code to submit pr.
 

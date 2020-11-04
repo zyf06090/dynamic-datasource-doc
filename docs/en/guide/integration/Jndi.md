@@ -1,4 +1,4 @@
-# 集成Jndi
+# Integrating Jndi
 
 ```yaml
 spring:
