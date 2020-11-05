@@ -1,7 +1,5 @@
 # 动态添加移除数据源
 
-[动态增加删除数据源示例项目](https://gitee.com/baomidou/dynamic-datasource-samples/tree/master/add-remove-datasource-sample)
-
 ```java
 @RestController
 @AllArgsConstructor

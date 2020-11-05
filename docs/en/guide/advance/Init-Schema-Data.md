@@ -1,4 +1,4 @@
-# 启动初始化执行脚本
+# Init schema and data
 
 ```yml
 spring:
@@ -7,11 +7,10 @@ spring:
       primary: order
       datasource:
         order:
-          # 基础配置省略...
-          schema: db/order/schema.sql # 配置则生效,自动初始化表结构
-          data: db/order/data.sql # 配置则生效,自动初始化数据
-          continue-on-error: true # 默认true,初始化失败是否继续
-          separator: ";" # sql默认分号分隔符，一般无需更改
+          schema: db/order/schema.sql 
+          data: db/order/data.sql 
+          continue-on-error: true
+          separator: ";"
         product:
           schema: classpath*:db/product/schema.sql
           data: classpath*:db/product/data.sql

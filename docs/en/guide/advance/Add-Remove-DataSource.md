@@ -1,12 +1,9 @@
-# 动态添加移除数据源
-
-[动态增加删除数据源示例项目](https://gitee.com/baomidou/dynamic-datasource-samples/tree/master/add-remove-datasource-sample)
+# Dynamic add remove datasource
 
 ```java
 @RestController
 @AllArgsConstructor
 @RequestMapping("/datasources")
-@Api(tags = "添加删除数据源")
 public class LoadController {
 
   private final DynamicRoutingDataSource ds;

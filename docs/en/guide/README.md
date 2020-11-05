@@ -58,7 +58,6 @@ spring:
 ```
 
 ```yaml
-# 多主多从                      纯粹多库（记得设置primary）                   混合配置
 spring:                               spring:                               spring:
   datasource:                           datasource:                           datasource:
     dynamic:                              dynamic:                              dynamic:
@@ -70,7 +69,7 @@ spring:                               spring:                               spri
         slave_3:                              h2:                                   oracle_2:
 ```
 
-3. 使用  **@DS**  切换数据源。
+3. use **@DS** to switch datasource.
 
 **@DS** 可以注解在方法上或类上，**同时存在就近原则 方法上注解 优先于 类上注解**。
 

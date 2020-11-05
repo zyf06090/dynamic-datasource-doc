@@ -1,15 +1,15 @@
 # Integrating MybatisPlus
 
-## ## Introduction
+## Introduction
 
 - MybatisPlus Github <https://github.com/baomidou/mybatis-plus>
 - MybatisPlus Document <https://mybatis.plus/>
 
 > 只要引入了mybatisPlus相关jar包，项目自动集成，兼容mybatisPlus 2.x和3.x的版本。
 
-## 使用方法
+## How to use
 
-1. 项目引入 `mybatis-Plus` 依赖。
+1. use `mybatis-Plus` dependency.
 <a href="http://mvnrepository.com/artifact/com.baomidou/mybatis-plus" target="_blank">
 <img src="https://img.shields.io/maven-central/v/com.baomidou/mybatis-plus.svg" ></a>
 
@@ -21,7 +21,7 @@
 </dependency>
 ```
 
-2. 使用`DS`注解进行切换数据源。
+2. use `DS` annotation to switch datasource.
 
 ```java
 @Service
@@ -38,14 +38,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 ## FAQ
 
-1. **为什么直接调用某些方法切换数据源失败**:question:
+1. **Why calling some mybatis plus methods failed to switch datasource**:question:
 
-mp内置的ServiceImpl在新增,更改,删除等一些方法上自带事物导致不能切换数据源。
+The built-in ServiceImpl in mp comes with transation that can be added, changed, removed, and so forth that you can not switch datasource.
 
-解决办法:写自己的service方法,调用baseMapper的方法. 如上面的`addUser`方法。
+Solution: write your own service method and call the baseMapper method. As the 'addUser' method above.
 
-2. **为什么要单独拿出来说和mybatisPlus的集成**:question:
+2. **Why take it out on the integration with Mybatisplus**:question:
 
-因为mybatisPlus重写了一些核心类，必须通过解析获得真实的代理对象。
+Because mybatisPlus overrides some of the mybatis core classes, the actual proxy object must be resolved.
 
 <https://github.com/baomidou/dynamic-datasource-spring-boot-starter/blob/master/src/main/java/com/baomidou/dynamic/datasource/support/DataSourceClassResolver.java>

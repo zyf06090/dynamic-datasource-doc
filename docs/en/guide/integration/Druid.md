@@ -24,7 +24,7 @@ This component is ```simple and efficient ``` :cherry_blossom:  in integrating D
 <dependency>
     <groupId>com.alibaba</groupId>
     <artifactId>druid-spring-boot-starter</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
 </dependency>
 ```
 
