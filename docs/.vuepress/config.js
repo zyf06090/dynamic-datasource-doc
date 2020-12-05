@@ -23,6 +23,7 @@ module.exports = {
     docsRepo: "dynamic-datasource/dynamic-datasource-doc",
     smoothScroll: true,
     editLinks: true,
+    docsDir: 'docs',
     locales: {
       "/en/": {
         selectText: "Languages",
@@ -37,7 +38,7 @@ module.exports = {
       "/": {
         selectText: "Language",
         label: "简体中文",
-        editLinkText: "完善文档",
+        editLinkText: "在Github上编辑此文档",
         lastUpdated: "上次更新",
         nav: genNav(true),
         sidebar: {
@@ -51,7 +52,7 @@ module.exports = {
 function genNav(isZh) {
   return [
     {
-      text: "生态",
+      text:  isZh ?"生态":"Ecosystem",
       items: [
         {
           text: "MybatisPlus",
