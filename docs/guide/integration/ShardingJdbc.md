@@ -93,7 +93,7 @@ spring:
 
 ```java
 @Configuration
-@AutoConfigureBefore({DynamicDataSourceAutoConfiguration.class, SpringBootConfiguration.class})
+@AutoConfigureBefore(DynamicDataSourceAutoConfiguration.class)
 public class MyDataSourceConfiguration {
     @Resource
     private DynamicDataSourceProperties properties;
