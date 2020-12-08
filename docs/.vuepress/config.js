@@ -18,6 +18,16 @@ module.exports = {
       description: "一个基于SpringBoot的动态多数据源组件",
     },
   },
+  head: [
+    [
+      "script",
+      {
+        "data-ad-client": "ca-pub-9566603771819848",
+        async: true,
+        src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      }
+    ]
+  ],
   themeConfig: {
     repo: "baomidou/dynamic-datasource-spring-boot-starter",
     docsRepo: "dynamic-datasource/dynamic-datasource-doc",
