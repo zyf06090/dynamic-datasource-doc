@@ -29,16 +29,15 @@ module.exports = {
     ],
     ['script', {}, `
     var hm1 = document.createElement("script");
-    hm1.src = "https://www.googletagmanager.com/gtag/js?id=UA-92550705-1";
+    hm1.src = "https://www.googletagmanager.com/gtag/js?id=G-Y9Y230RW5M";
     var s1 = document.getElementsByTagName("script")[0]; 
     s1.parentNode.insertBefore(hm1, s1);
-    })();
 
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-92550705-1');
+    gtag('config', 'G-Y9Y230RW5M');
 `]
   ],
   themeConfig: {
